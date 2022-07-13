@@ -60,18 +60,19 @@
 
 ### MVP
 
-- [ ] Create a blockchain based application.
-- [ ] Connect to a blockchain wallet(Metamask).
 - [ ] Create a user login.
-- [ ] Pairing users with a wallet.
-- [ ] Wallet interaction with smart contract.
-- [ ] Sending Ethereum to the another address.
-- [ ] Add gif when transactions are made.
 - [ ] Showing transactions.
+- [ ] Writing smart contract with Solidity.
+- [ ] Add gif when transactions are made.
+- [ ] Create a blockchain based application.
 - [ ] Having a user friendly interface and minimalist design.
+- [ ] Sending Ethereum to the another address.
 
 ### Stretch Goals
 
+- [ ] Pairing users with a wallet.
+- [ ] Wallet interaction with smart contract.
+- [ ] Connect to a blockchain wallet(Metamask).
 - [ ] Receiving Ethereum to the another address.
 - [ ] Buying and selling Ethereum and other crypto currencies.
 - [ ] Sending and receiving Ethereum and other crypto currencies.
@@ -93,7 +94,6 @@
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
 ![Git](https://img.shields.io/badge/-Git-333?style=flat&logo=git)
-
 
 - React with Tailwind will be used for client side.
 - Solidity will be used for smart contract.
