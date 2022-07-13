@@ -66,10 +66,10 @@
 - [ ] Add gif when transactions are made.
 - [ ] Create a blockchain based application.
 - [ ] Having a user friendly interface and minimalist design.
-- [ ] Sending Ethereum to the another address.
 
 ### Stretch Goals
 
+- [ ] Sending Ethereum to the another address.
 - [ ] Pairing users with a wallet.
 - [ ] Wallet interaction with smart contract.
 - [ ] Connect to a blockchain wallet(Metamask).
