@@ -26,8 +26,8 @@
 
 </summary>
 
-![Welcome Page](./imgs/Welcome.png)
-![Transactions Page](./imgs/Transactions.png)
+![Welcome Page](./wireframe/Welcome.png)
+![Transactions Page](./wireframe/Transactions.png)
 
 </details>
 
