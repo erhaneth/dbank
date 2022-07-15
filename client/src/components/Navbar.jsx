@@ -1,6 +1,6 @@
 function NavBar() {
     return (
-        <div className="navbar">Navbar</div>
+        <div className="">Navbar</div>
     )
 }
 export default NavBar;
