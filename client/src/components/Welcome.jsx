@@ -2,7 +2,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
-import { Loader } from ".";
+import { Loader } from "./";
 const commonStyles =
   "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
@@ -31,14 +31,14 @@ function Welcome() {
           <button
             type="button"
             onClick={connectWallet}
-            className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#5867b2]"
+            className="flex flex-row justify-center items-center my-2 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#5867b2]"
           >
             <p className="text-white text-base font-bold">Connect Wallet</p>
           </button>
-          <h1 className="text-xl font-bold text-white sm:text-5xl text-gradient py-1">
+          <h1 className="text-xl font-semibold text-white sm:text-2xl text-gradient py-1">
             Why Blockchain
           </h1>
-          <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-10">
+          <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-20">
             <div className={`rounded-tl-2xl ${commonStyles}`}>Uncensorable</div>
             <div className={commonStyles}>Secure</div>
             <div className={`sm:rounded-tr-2xl ${commonStyles}`}>
@@ -95,7 +95,7 @@ function Welcome() {
             />
             <div className="h-[1px] w-full bg-gray-400 my-2" />
 
-            {false? (
+            {false ? (
               <Loader />
             ) : (
               <button
