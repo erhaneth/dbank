@@ -10,11 +10,11 @@ const NavbarItem = ({ title, classProps }) => {
 function NavBar() {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="w-full flex md:justify-center bg-white justify-between items-center py-4">
-      <div className="md:flex-[0.5] flex-initial justify-center items-center">
-        <img src={logo} alt="logo" className="h-36 w-48 cursor-pointer flex flex-none" />
+    <nav className="w-full flex md:justify-center bg-[#646464] justify-between items-center py-auto">
+      <div className="flex justify-between items-center w-full h-full px-2 xl:px-16">
+        <img src={logo} alt="/" className="cursor-pointer" width="160" height="80" />
       </div>
-      <ul className="text-black md:flex hidden list-none flex-row  justify-between items-center flex-initial ">
+      <ul className="text-white md:flex hidden list-none flex-row font-bold justify-between items-center flex-initial ">
         {/* map items and pass to navbar */}
         {["Transactions", "Wallet"].map((item, index) => (
           <NavbarItem key={item + index} title={item} />
