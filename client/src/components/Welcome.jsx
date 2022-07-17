@@ -20,11 +20,9 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
   />
 );
 function Welcome() {
-  const { value} = useContext(TransactionContext);
-  console.log(value);
-  const connectWallet = () => {
-    // window.location.href = "https://metamask.io/";
-  };
+  const { connectWallet} = useContext(TransactionContext);
+  console.log(connectWallet);
+ 
   const handleSubmit = () => {
     // console.log("submit");
   };

@@ -19,8 +19,35 @@ const  getEthereumContract = () => {
     });
 }
 export const TransactionProvider = ({ children }) => { 
+    const [currentAccount, setCurrentAccount] = useState("");
+    const checkIfWalletConnected = async () => {    
+        if (!ethereum) 
+        return 
+        console.log("Please connect to a wallet");
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+        console.log({ accounts });
+
+    }
+
+    const connectWallet = async () => {
+       try {
+        if (!ethereum) 
+        return 
+        console.log("Please connect to a wallet");
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        setCurrentAccount(accounts[0]);
+       } catch (error) {
+         console.log(error);
+       }
+    }
+
+    useEffect(() => {   
+        checkIfWalletConnected();
+    }
+    , []);
+
     return (
-<TransactionContext.Provider value={{value: "yeay"}}>
+<TransactionContext.Provider value={{connectWallet, currentAccount}}>
     {children}
 </TransactionContext.Provider>
     );
