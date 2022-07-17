@@ -9,11 +9,15 @@ const main = async () => {
 };
 
 const runMain = async () => {
+  // to catch any errors in the main function
   try {
     await main();
+    // success
     process.exit(0);
+    
   } catch (error) {
-    console.error(error);
+    console.error("Failed 🙈 ",error);
+    // failure
     process.exit(1);
   }
 };
