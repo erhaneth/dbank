@@ -19,8 +19,10 @@ const  getEthereumContract = () => {
     });
 }
 export const TransactionProvider = ({ children }) => { 
+    return (
 <TransactionContext.Provider value={{value: "yeay"}}>
     {children}
 </TransactionContext.Provider>
+    );
 
 }

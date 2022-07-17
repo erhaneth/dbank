@@ -23,7 +23,7 @@ function Welcome() {
   const { value} = useContext(TransactionContext);
   console.log(value);
   const connectWallet = () => {
-    window.location.href = "https://metamask.io/";
+    // window.location.href = "https://metamask.io/";
   };
   const handleSubmit = () => {
     // console.log("submit");
