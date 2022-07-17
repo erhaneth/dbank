@@ -1,11 +1,13 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
-// transacrion class for the  contract
+// pragma solidity >=0.5.0 <0.6.0;.
+// transaction class for the  contract
 contract Transactions {
     // a variable to store transactions of the contract
     uint256 transactionCount;
     //a function will be called later on
-    event Transafer( 
+        // (type, variable name)
+    event Transfer( 
         address from, 
         address recevier, 
         uint amount, 

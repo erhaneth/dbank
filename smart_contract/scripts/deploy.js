@@ -1,4 +1,5 @@
 const main = async () => {
+  //a factory generate instances of the transaction class
   const transactionsFactory = await hre.ethers.getContractFactory("Transactions");
   const transactionsContract = await transactionsFactory.deploy();
 
