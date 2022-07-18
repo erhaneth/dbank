@@ -2,30 +2,54 @@ import React, { useContext } from "react";
 import { shortAddress } from "../utils/shortAddress";
 import { TransactionContext } from "../context/TransactionContext";
 import dummyData from "../utils/dummyData";
+import useFetch from "../hooks/useFetch";
 
 const TransactionCard = ({
   addressTo,
   addressFrom,
   timestamp,
   message,
-  keyboard,
+  keyword,
   amount,
   url,
 }) => {
+  const gifUrl = useFetch({ keyword });
   return (
     <div className="bg-gray-400 m-4 flex flex-1 2xl:min-w-[450px] 2xl:max-w-[500px] sm:min-w-[270px] sm:max-w-[300px] flex-col p-3 rounded-md hover:shadow-2xl">
-        <div className="flex flex-col items-center w-full mt-3">
-        <div className="display-flex justify-start w-full mb-6 p-2">
-        <a href={`https://goerli.etherscan.io/address/${addressFrom}`} target="_blank" rel="noreferrer">
-        <p className="text-white text-base">From: {shortAddress(addressFrom)}</p>
-        </a>
-        <a href={`https://goerli.etherscan.io/address/${addressTo}`} target="_blank" rel="noreferrer">
-        <p className="text-white text-base">From: {shortAddress(addressTo)}</p>
-        </a>
-        </div>
-        </div>
-            
+      <div className="flex flex-col items-center w-full mt-3">
+        <div className="w-full mb-6 p-2">
+          <a
+            href={`https://goerli.etherscan.io/address/${addressFrom}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p className="text-white text-base">
+              From: {shortAddress(addressFrom)}
+            </p>
+          </a>
+          <a
+            href={`https://goerli.etherscan.io/address/${addressTo}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p className="text-white text-base">
+              To: {shortAddress(addressTo)}
+            </p>
+          </a>
+          <p className="text-white text-base">Amount: {amount} eth</p>
+          {message && (
+            <>
+              <br />
+              <p className="text-white text-base">Message: {message}</p>
+            </>
+          )}
+          <img src={gifUrl || url} alt="gif" className="w-full h-auto 2x:h-96 rounded-3xl shadow-md object-cover" />
 
+          <div className="bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl">
+            <p className="text-white font-bold">{timestamp}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
