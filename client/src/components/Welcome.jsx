@@ -22,7 +22,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 function Welcome() {
   const { connectWallet, currentAccount, formData, sendTransaction, handleChange } =
     useContext(TransactionContext);
-  console.log(connectWallet);
+  // console.log(connectWallet);
 
   const handleSubmit = (e) => {
     const { addressTo, amount, message, keyword } = formData;
@@ -87,25 +87,25 @@ function Welcome() {
               placeholder="Address to"
               name="addressTo"
               type="text"
-              handelChange={handleChange}
+              handleChange={handleChange}
             />
             <Input
               placeholder="Amount (ether)"
               name="amount"
               type="number"
-              handelChange={handleChange}
+              handleChange={handleChange}
             />
             <Input
               placeholder="Keyword (Gifhy)"
               name="keyword"
               type="text"
-              handelChange={handleChange}
+              handleChange={handleChange}
             />
             <Input
               placeholder="Enter your message"
               name="message"
               type="text"
-              handelChange={handleChange}
+              handleChange={handleChange}
             />
             <div className="h-[1px] w-full bg-gray-400 my-2" />
 
