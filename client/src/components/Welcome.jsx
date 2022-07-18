@@ -3,7 +3,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
-import  { TransactionContext } from "../context/TransactionContext";
+import { TransactionContext } from "../context/TransactionContext";
 
 import { Loader } from "./";
 const commonStyles =
@@ -20,10 +20,19 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
   />
 );
 function Welcome() {
-  const { connectWallet} = useContext(TransactionContext);
+  const { connectWallet, currentAccount, formData, sendTransaction, handleChange } =
+    useContext(TransactionContext);
   console.log(connectWallet);
- 
-  const handleSubmit = () => {
+
+  const handleSubmit = (e) => {
+    const { addressTo, amount, message, keyword } = formData;
+    e.preventDefault();
+
+    if (!addressTo || !amount || !message || !keyword) {
+     
+      return;
+    }
+    sendTransaction();
     // console.log("submit");
   };
 
@@ -31,13 +40,15 @@ function Welcome() {
     <div className="flex w-full justify-center items-center">
       <div className="flex md:flex-row flex-col items-start justify-between md:p-20 py-20 px-4 ">
         <div className="flex flex-1  justify-start flex-col md:mr-10">
-          <button
-            type="button"
-            onClick={connectWallet}
-            className="flex flex-row justify-center items-center my-2 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#5867b2]"
-          >
-            <p className="text-white text-base font-bold">Connect Wallet</p>
-          </button>
+          {!currentAccount && (
+            <button
+              type="button"
+              onClick={connectWallet}
+              className="flex flex-row justify-center items-center my-2 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#5867b2]"
+            >
+              <p className="text-white text-base font-bold">Connect Wallet</p>
+            </button>
+          )}
           <h1 className="text-xl font-semibold text-white sm:text-2xl text-gradient py-1">
             Why Blockchain
           </h1>
@@ -76,25 +87,25 @@ function Welcome() {
               placeholder="Address to"
               name="addressTo"
               type="text"
-              handelChange={() => {}}
+              handelChange={handleChange}
             />
             <Input
               placeholder="Amount (ether)"
               name="amount"
               type="number"
-              handelChange={() => {}}
+              handelChange={handleChange}
             />
             <Input
               placeholder="Keyword (Gifhy)"
               name="keyword"
               type="text"
-              handelChange={() => {}}
+              handelChange={handleChange}
             />
             <Input
               placeholder="Enter your message"
               name="message"
               type="text"
-              handelChange={() => {}}
+              handelChange={handleChange}
             />
             <div className="h-[1px] w-full bg-gray-400 my-2" />
 
