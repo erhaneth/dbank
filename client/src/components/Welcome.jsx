@@ -43,13 +43,13 @@ function Welcome() {
             <button
               type="button"
               onClick={connectWallet}
-              className="flex flex-row justify-center items-center my-2 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#5867b2]"
+              className="flex flex-row justify-center items-center my-4 bg-[#353396] p-3 rounded-full cursor-pointer hover:bg-[#5867b2]"
             >
               <p className="text-white text-base font-bold">Connect Wallet</p>
             </button>
           )}
-          <h1 className="text-xl font-semibold text-white sm:text-2xl text-gradient py-1">
-            Why dBank
+          <h1 className="text-4xl flex flex-row justify-center items-center font-bold text-white sm:text-2xl py-2 mt-10">
+            Why dBank ?
           </h1>
           <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-20">
             <div className={`rounded-tl-2xl ${commonStyles}`}>Uncensorable</div>

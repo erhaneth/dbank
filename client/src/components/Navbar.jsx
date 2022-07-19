@@ -19,7 +19,7 @@ function NavBar() {
         {["Transactions", "Wallet"].map((item, index) => (
           <NavbarItem key={item + index} title={item} />
         ))}
-        <li className="bg-[#353396]  text-white py-2 px-6 rounded-2xl hover:bg-slate-500">
+        <li className="bg-[#353396]  text-white py-2 px-6 rounded-2xl hover:bg-[#5867b2]">
           Login
         </li>
       </ul>
