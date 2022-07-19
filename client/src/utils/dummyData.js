@@ -2,7 +2,7 @@
 export default [
     {
       id: 1,
-      url: "https://metro.co.uk/wp-content/uploads/2015/05/pokemon_crying.gif?quality=90&strip=all&zoom=1&resize=500%2C284",
+      url: "https://media4.giphy.com/media/xxDZ4E4f043oA/giphy.gif?cid=6104955ey5gnrj7eais9j0ejlbbxtt26l6d799o4rbx1onts&rid=giphy.gif&ct=g",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
@@ -11,7 +11,7 @@ export default [
     },
     {
       id: 2,
-      url: "https://media4.popsugar-assets.com/files/2013/11/07/832/n/1922398/eb7a69a76543358d_28.gif",
+      url: "https://media1.giphy.com/media/F22KXFQeo8yac/giphy.gif?cid=6104955ednn146ljmvznwuxncymsmo1oakwch889ziavslnp&rid=giphy.gif&ct=g",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
@@ -29,7 +29,7 @@ export default [
     },
     {
       id: 4,
-      url: "https://i.pinimg.com/originals/68/a0/9e/68a09e774e98242871c2db0f99307420.gif",
+      url: "https://media4.giphy.com/media/ZeB4HcMpsyDo4/giphy-downsized.gif?cid=6104955ecjacswc6mchgi3y3row98el1etlrj834lh0kosaj&rid=giphy-downsized.gif&ct=g",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
@@ -38,7 +38,7 @@ export default [
     },
     {
       id: 5,
-      url: "https://i.pinimg.com/originals/73/d3/a1/73d3a14d212314ab1f7268b71d639c15.gif",
+      url: "https://media2.giphy.com/media/UW7dETXIAsCK5m0tkM/giphy-downsized.gif?cid=6104955e458r2a6ta1b2sk05dhw5yu51mfbwo5bf34vsa68a&rid=giphy-downsized.gif&ct=g",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
@@ -47,7 +47,7 @@ export default [
     },
     {
       id: 6,
-      url: "https://www.omnisend.com/blog/wp-content/uploads/2016/09/funny-gifs-9.gif",
+      url: "https://media3.giphy.com/media/K4x1ZL36xWCf6/giphy.gif?cid=6104955e687bsmvmv631x9rqfp6fsbrg8o9tfve8m7urnzon&rid=giphy.gif&ct=g",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
