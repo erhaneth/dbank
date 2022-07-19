@@ -6,7 +6,7 @@ export const TransactionContext = React.createContext();
 
 const { ethereum } = window;
 
-const getEthereumContract = () => {
+const createEthereumContract = () => {
   const provider = new ethers.providers.Web3Provider(ethereum);
   const signer = provider.getSigner();
   const contract = new ethers.Contract(contractAddress, contractABI, signer);
@@ -37,31 +37,32 @@ export const TransactionProvider = ({ children }) => {
 
   const getAllTransactions = async () => {
     try {
-      if (!ethereum) return;
-      const transactionContract = getEthereumContract();
-      // getalltransactions() from contract
-      const availableTransactions =
-        await transactionContract.getAllTransactions();
-      const structuredTransactions = availableTransactions.map(
-        (transaction) => ({
-          addressTo: transaction.receiver, // addressTo
-          addressFrom: transaction.sender, // addressFrom
-          timestamp: new Date(
-            transaction.timestamp.toNumber() * 1000
-          ).toLocaleString(), // timestamp
-          message: transaction.message, // message
-          keyword: transaction.keyword, // keyword
-          amount: parseInt(transaction.amount._hex) * 10 ** 18, // amount in wei
-        })
-      );
+      if (ethereum) {
+        const transactionsContract = createEthereumContract();
+        // getAllTransactions() returns an array of transaction hashes -- from smart contract
+        const availableTransactions = await transactionsContract.getAllTransactions();
 
-      setTransactions(structuredTransactions);
+        const structuredTransactions = availableTransactions.map((transaction) => ({
+          addressTo: transaction.receiver,
+          addressFrom: transaction.sender,
+          timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
+          message: transaction.message,
+          keyword: transaction.keyword,
+          amount: parseInt(transaction.amount._hex) / (10 ** 18) // convert to ether
+        }));
+
+        console.log(structuredTransactions);
+
+        setTransactions(structuredTransactions);
+      } else {
+        console.log("Ethereum is not present");
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
-  const checkIfWalletConnected = async () => {
+  const checkIfWalletIsConnect = async () => {
     try {
       if (!ethereum) return;
       // console.log("Please install MetaMask");
@@ -78,21 +79,21 @@ export const TransactionProvider = ({ children }) => {
     }
   };
 
-  const checkIfTransactionsExist = async () => {
+  const checkIfTransactionsExists = async () => {
     try {
       if (ethereum) {
-        const transactionContract = getEthereumContract();
-        const transactionCount = await transactionContract.getTransactionCount(
-          currentAccount
-        );
-        setTransactionCount(transactionCount);
-        window.localStorage.setItem("transactionCount", transactionCount);
+        const transactionsContract = createEthereumContract();
+        const currentTransactionCount = await transactionsContract.getTransactionCount();
+
+        window.localStorage.setItem("transactionCount", currentTransactionCount);
       }
     } catch (error) {
       console.log(error);
-      throw new Error("No ethereum object found");
+
+      throw new Error("No ethereum object");
     }
   };
+
 
   const connectWallet = async () => {
     try {
@@ -113,7 +114,7 @@ export const TransactionProvider = ({ children }) => {
     try {
       if (ethereum) {
         const { addressTo, amount, message, keyword } = formData;
-        const transactionContract = getEthereumContract();
+        const transactionContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
         // transactionContract to call related function
         await ethereum.request({
@@ -161,8 +162,8 @@ export const TransactionProvider = ({ children }) => {
     }
   };
   useEffect(() => {
-    checkIfWalletConnected();
-    checkIfTransactionsExist();
+    checkIfWalletIsConnect();
+    checkIfTransactionsExists();
   }, [transactionCount]);
   return (
     <TransactionContext.Provider
