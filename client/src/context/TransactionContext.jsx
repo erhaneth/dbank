@@ -110,55 +110,45 @@ export const TransactionProvider = ({ children }) => {
   };
 
   //sending from one to and another and storing transaction
-  const sendTransaction = async (to, value) => {
+  const sendTransaction = async () => {
     try {
       if (ethereum) {
-        const { addressTo, amount, message, keyword } = formData;
-        const transactionContract = createEthereumContract();
+        const { addressTo, amount, keyword, message } = formData;
+        const transactionsContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
-        // transactionContract to call related function
+        // request to send transaction  to the blockchain
         await ethereum.request({
-          // request to send transaction  to the blockchain
           method: "eth_sendTransaction",
-          params: [
-            {
-              from: currentAccount,
-              to: addressTo,
-              // 5208 hexadecimal value of 0.00021 ether (21000 wei ->subunit of ether)
-              gas: "0x5208", // 21000 wei
-              // parseEther(amount) converts the amount to wei
-              value: parsedAmount._hex,
-            },
-          ],
+          params: [{
+            from: currentAccount,
+            to: addressTo,
+            // 5208 hexadecimal value of 0.00021 ether (21000 wei ->subunit of ether)
+             //gas: "0x5208", // 21000 wei
+             //parseEther(amount) converts the amount to wei
+            gas: "0x5208",
+            value: parsedAmount._hex,
+          }],
         });
         // store the transaction in the blockchain
-        const transactionHash = await transactionContract.addToBlockchain(
-          addressTo,
-          parsedAmount,
-          message,
-          keyword
-        );
-
+        const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount, message, keyword);
         setIsLoading(true);
+        console.log(`Loading - ${transactionHash.hash}`);
         // wait for the transaction to be mined
-        console.log(`loading transaction - ${transactionHash}`);
         await transactionHash.wait();
-
-        // wait for the transaction to be mined
-        console.log(`success - ${transactionHash}`);
+        console.log(`Success - ${transactionHash.hash}`);
         setIsLoading(false);
 
-        const transactionCount =
-          await transactionContract.getTransactionCount();
+        const transactionsCount = await transactionsContract.getTransactionCount();
 
-        setTransactionCount(transactionCount.toNumber());
+        setTransactionCount(transactionsCount.toNumber());
         window.location.reload();
       } else {
         console.log("No ethereum object");
       }
     } catch (error) {
       console.log(error);
-      throw new Error("No ethereum object found");
+
+      throw new Error("No ethereum object");
     }
   };
   useEffect(() => {

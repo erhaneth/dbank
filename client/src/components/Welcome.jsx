@@ -49,7 +49,7 @@ function Welcome() {
             </button>
           )}
           <h1 className="text-xl font-semibold text-white sm:text-2xl text-gradient py-1">
-            Why Blockchain
+            Why dBank
           </h1>
           <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-20">
             <div className={`rounded-tl-2xl ${commonStyles}`}>Uncensorable</div>

@@ -1,0 +1,19 @@
+# utilized alchemy for deploying the application on Ethereum blockchain. 
+# utilized hardhat for testing the application.
+# utilized hardhat-waffle plugin for testing smart contracts.
+
+# accounts: ['pravite key'] -- in the hardhat congfig file
+
+#commands:
+  # npx hardhat run scripts/deploy.js --network oginler
+
+# abi means contract application binary interface
+ # its a standard way to interact with the ethereum ecosystem
+   # contract to contract and blockchain to contract
+
+#smart contract is saving and storing data in the blockchain when user makes a transaction on the client side
+
+#context helped write logic in one place
+avoid blood budget settle smart eight bracket mystery actor misery claw net
+
+
