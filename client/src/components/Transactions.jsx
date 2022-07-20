@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { shortAddress } from "../utils/shortAddress";
 import { TransactionContext } from "../context/TransactionContext";
-import dummyData from "../utils/dummyData";
+
 import useFetch from "../hooks/useFetch";
 
 const TransactionCard = ({
@@ -14,7 +14,7 @@ const TransactionCard = ({
   url,
 }) => {
   const gifUrl = useFetch({ keyword });
-  console.log(gifUrl);
+  // console.log(gifUrl);
   return (
     <div className="bg-gray-400 m-4 flex flex-1 2xl:min-w-[450px] 2xl:max-w-[500px] sm:min-w-[270px] sm:max-w-[300px] flex-col p-3 rounded-md hover:shadow-2xl">
       <div className="flex flex-col items-center w-full mt-3">
