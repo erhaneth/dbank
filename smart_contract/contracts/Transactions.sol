@@ -6,7 +6,7 @@ contract Transactions {
     // a variable to store transactions of the contract
     uint256 transactionCount;
     //a function will be called later on
-        // (type, variable name)
+        //object "type, variable name"
     event Transfer( 
         address from, 
         address recevier, 
@@ -32,7 +32,7 @@ contract Transactions {
        //incremet the transaction counter
        transactionCount += 1;
        transactions.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp, keyword));
-
+         //final action for transfer
        emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
     }
     // it returns array of TransferStruct from memory
