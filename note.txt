@@ -1,6 +1,9 @@
-# utilized alchemy for deploying the application on Ethereum blockchain. 
-# utilized hardhat for testing the application.
-# utilized hardhat-waffle plugin for testing smart contracts.
+#when i 
+--> utilized alchemy for deploying the application on Ethereum blockchain. 
+--> utilized hardhat for testing the application.
+--> utilized hardhat-waffle plugin for testing smart contracts.
+
+
 
 # accounts: ['pravite key'] -- in the hardhat congfig file
 

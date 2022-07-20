@@ -71,17 +71,21 @@ export const TransactionProvider = ({ children }) => {
     const checkIfWalletIsConnect = async () => {
       try {
         if (!ethereum) return;
-        // console.log("Please install MetaMask");
+        console.log("Please install MetaMask");
+        // set multiple accounts
         const accounts = await ethereum.request({ method: "eth_accounts" });
         // console.log( accounts );
         if (accounts.length) {
+          // default account is the first account
           setCurrentAccount(accounts[0]);
+          // get all transactions for the default account
           getAllTransactions();
         } else {
-          console.log("No accounts found");
+          console.log("No accounts found🦄");
         }
       } catch (error) {
         console.log(error);
+        throw new Error("No Ethereum wallet found🧧");
       }
     };
 
@@ -100,7 +104,7 @@ export const TransactionProvider = ({ children }) => {
       } catch (error) {
         console.log(error);
 
-        throw new Error("No ethereum object");
+        throw new Error("No ethereum object, reconnect your wallet");
       }
     };
     checkIfWalletIsConnect();
@@ -126,6 +130,7 @@ export const TransactionProvider = ({ children }) => {
     try {
       if (ethereum) {
         const { addressTo, amount, keyword, message } = formData;
+        //create ethereum contract instance to interact with smart contract
         const transactionsContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
         // request to send transaction  to the blockchain
@@ -136,7 +141,6 @@ export const TransactionProvider = ({ children }) => {
               from: currentAccount,
               to: addressTo,
               // 5208 hexadecimal value of 0.00021 ether (21000 wei ->subunit of ether)
-              //gas: "0x5208", // 21000 wei
               //parseEther(amount) converts the amount to wei
               gas: "0x5208",
               value: parsedAmount._hex,
@@ -152,7 +156,7 @@ export const TransactionProvider = ({ children }) => {
         );
         setIsLoading(true);
         console.log(`Loading - ${transactionHash.hash}`);
-        // wait for the transaction to be mined
+        // wait for the transaction to be mined - finish the transaction
         await transactionHash.wait();
         console.log(`Success - ${transactionHash.hash}`);
         setIsLoading(false);

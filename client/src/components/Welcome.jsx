@@ -95,7 +95,7 @@ function Welcome() {
               handleChange={handleChange}
             />
             <Input
-              placeholder="Keyword (Gifhy)"
+              placeholder="Keyword (Giphy as a gift)"
               name="keyword"
               type="text"
               handleChange={handleChange}
