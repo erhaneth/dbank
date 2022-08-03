@@ -46,26 +46,26 @@
 
 ## User Stories
 
-- [ ] As a user, I want to be able to login to the application with Metamask wallet.
+- [x] As a user, I want to be able to login to the application with Metamask wallet.
 - [ ] As a user, I want to be able to create an account.
 - [ ] As a user, I want to be able to logout of the application.
-- [ ] As a user, I want to be able to see my transactions.
-- [ ] As a user, I want to be able to send crypto currencies to other users.
+- [x] As a user, I want to be able to see my transactions.
+- [x] As a user, I want to be able to send crypto currencies to other users.
 - [ ] As a user, I want to be able to receive crypto currencies from other users.
 - [ ] As a user, I want to be able to buy crypto currencies.
 - [ ] As a user, I want to be able to sell crypto currencies.
 
 ## Goals
 
-- [ ] Create a blockchain based application.
-- [ ] Connect to a blockchain wallet(Metamask).
+- [x] Create a blockchain based application.
+- [ x Connect to a blockchain wallet(Metamask).
 - [ ] Create a user login.
-- [ ] Pairing users with a wallet.
-- [ ] Wallet interaction with smart contract.
+- [x] Pairing users with a wallet.
+- [x] Wallet interaction with smart contract.
 - [ ] Sending and receiving Ethereum and other crypto currencies.
-- [ ] Add gif when transactions are made.
+- [x] Add gif when transactions are made.
 - [ ] Buying and selling Ethereum and other crypto currencies.
-- [ ] Showing transactions.
+- [x] Showing transactions.
 - [ ] Showing user's balance.
 - [ ] Showing real time price of crypto currencies.
 - [ ] Having educational features.
@@ -73,22 +73,22 @@
 
 ### MVP
 
-- [ x ] Create a user login.
-- [ x ] Showing transactions.
+- [x] Create a user login.
+- [x] Showing transactions.
 - [x] Writing smart contract with Solidity.
-- [ ] Add gif when transactions are made.
-- [ ] Create a blockchain based application.
-- [ ] Having a user friendly interface and minimalist design.
-- [ ] Pairing users with a wallet.
-- [ ] Wallet interaction with smart contract.
-- [ ] Sending Ethereum to the another address.
-- [ ] Connect to a blockchain wallet(Metamask).
+- [x] Add gif when transactions are made.
+- [x] Create a blockchain based application.
+- [x] Having a user friendly interface and minimalist design.
+- [x] Pairing users with a wallet.
+- [x] Wallet interaction with smart contract.
+- [x] Sending Ethereum to the another address.
+- [x] Connect to a blockchain wallet(Metamask).
 
 ### Stretch Goals
 
-- [ ] Receiving Ethereum to the another address.
+- [x] Sending and receiving Ethereum and other crypto currencies.
+- [ ] Receiving Ethereum from the another address.
 - [ ] Buying and selling Ethereum and other crypto currencies.
-- [ ] Sending and receiving Ethereum and other crypto currencies.
 - [ ] Showing user's balance.
 - [ ] Showing real time price of crypto currencies.
 - [ ] Having educational features.
