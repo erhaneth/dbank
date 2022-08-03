@@ -31,6 +31,19 @@
 
 </details>
 
+## Screen Shots of the Project
+
+
+<details>
+<summary>
+
+</summary>
+
+![Shot1](./screenshots/shot1.png)
+![Shot2](./screenshots/shot2.png)
+
+</details>
+
 ## User Stories
 
 - [ ] As a user, I want to be able to login to the application with Metamask wallet.
@@ -60,9 +73,9 @@
 
 ### MVP
 
-- [ ] Create a user login.
-- [ ] Showing transactions.
-- [ ] Writing smart contract with Solidity.
+- [ x ] Create a user login.
+- [ x ] Showing transactions.
+- [x] Writing smart contract with Solidity.
 - [ ] Add gif when transactions are made.
 - [ ] Create a blockchain based application.
 - [ ] Having a user friendly interface and minimalist design.

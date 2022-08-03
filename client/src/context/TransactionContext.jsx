@@ -19,6 +19,7 @@ const createEthereumContract = () => {
   //   });
 };
 export const TransactionProvider = ({ children }) => {
+  //state variables
   const [currentAccount, setCurrentAccount] = useState("");
   const [formData, setFormData] = useState({
     addressTo: "",

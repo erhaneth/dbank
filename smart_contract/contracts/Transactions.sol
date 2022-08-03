@@ -27,7 +27,7 @@ contract Transactions {
     }
     //variable transactions  is an array of TransferStruct
     TransferStruct[] transactions;
-
+    // public means that the function can be called from outside the contract
     function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword )public {
        //incremet the transaction counter
        transactionCount += 1;
@@ -40,10 +40,7 @@ contract Transactions {
         return transactions;
     }
 
-    
     function getTransactionCount() public view returns (uint256) {
         return transactionCount;
     }
-
-    
 }
