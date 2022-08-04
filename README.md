@@ -58,7 +58,7 @@
 ## Goals
 
 - [x] Create a blockchain based application.
-- [ x Connect to a blockchain wallet(Metamask).
+- [x] Connect to a blockchain wallet(Metamask).
 - [ ] Create a user login.
 - [x] Pairing users with a wallet.
 - [x] Wallet interaction with smart contract.
