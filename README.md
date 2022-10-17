@@ -83,10 +83,11 @@
 - [x] Wallet interaction with smart contract.
 - [x] Sending Ethereum to the another address.
 - [x] Connect to a blockchain wallet(Metamask).
+- [x] Sending and receiving Ethereum and other crypto currencies.
 
 ### Stretch Goals
 
-- [x] Sending and receiving Ethereum and other crypto currencies.
+
 - [ ] Receiving Ethereum from the another address.
 - [ ] Buying and selling Ethereum and other crypto currencies.
 - [ ] Showing user's balance.
