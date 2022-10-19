@@ -17,7 +17,7 @@
 ## Project Description
 
  dBank is a crypto marketplace where you can interact with and learn about crypto currencies. In this single page web application, you can buy/sell crypto currencies, and send/receive crypto currencies.
- The application will be used by everyone who ise ready to jump rabbit holes. Users data will be stored in decentralized, persistent and append-only ledger.
+ The application will be used by everyone who is ready to jump rabbit holes. Users data will be stored in decentralized, persistent and append-only ledger.
 
 ## Wireframes
 
