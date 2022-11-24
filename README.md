@@ -69,7 +69,7 @@
 - [ ] Showing user's balance.
 - [ ] Showing real time price of crypto currencies.
 - [ ] Having educational features.
-- [ ] Having a user friendly interface and minimalist design.
+- [x] Having a user friendly interface and minimalist design.
 
 ### MVP
 
