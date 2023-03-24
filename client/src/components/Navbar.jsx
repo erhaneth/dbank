@@ -12,16 +12,19 @@ function NavBar() {
   return (
     <nav className="w-full flex md:justify-center bg-[#646464] justify-between items-center py-auto">
       <div className="flex justify-between items-center w-full h-full px-2 xl:px-16">
-        <img src={logo} alt="/" className="cursor-pointer" width="160" height="80" />
+        <img
+          src={logo}
+          alt="/"
+          className="cursor-pointer"
+          width="160"
+          height="80"
+        />
       </div>
       <ul className="text-white md:flex hidden list-none flex-row font-bold justify-between items-center flex-initial ">
         {/* map items and pass to navbar */}
         {["Transactions", "Wallet"].map((item, index) => (
           <NavbarItem key={item + index} title={item} />
         ))}
-        <li className="bg-[#353396]  text-white py-2 px-6 rounded-2xl hover:bg-[#5867b2]">
-          Login
-        </li>
       </ul>
       <div className="flex relative">
         {!toggle && (

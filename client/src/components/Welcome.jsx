@@ -19,8 +19,14 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
   />
 );
 function Welcome() {
-  const { connectWallet, currentAccount, formData, sendTransaction, handleChange, isLoading } =
-    useContext(TransactionContext);
+  const {
+    connectWallet,
+    currentAccount,
+    formData,
+    sendTransaction,
+    handleChange,
+    isLoading,
+  } = useContext(TransactionContext);
   // console.log(connectWallet);
 
   const handleSubmit = (e) => {
@@ -28,7 +34,6 @@ function Welcome() {
     e.preventDefault();
 
     if (!addressTo || !amount || !message || !keyword) {
-     
       return;
     }
     sendTransaction();
@@ -49,7 +54,7 @@ function Welcome() {
             </button>
           )}
           <h1 className="text-4xl flex flex-row justify-center items-center font-bold text-white sm:text-2xl py-2 mt-10">
-            Why dBank ?
+            In order to test the app, please connect your wallet.
           </h1>
           <div className="grid sm:grid-cols-3 grid-cols-3 w-full mt-20">
             <div className={`rounded-tl-2xl ${commonStyles}`}>Uncensorable</div>
@@ -74,7 +79,9 @@ function Welcome() {
                 <BsInfoCircle fontSize={17} color="white" />
               </div>
               <div>
-                <p className="text-white font-light text-sm">{shortAddress(currentAccount)}</p>
+                <p className="text-white font-light text-sm">
+                  {shortAddress(currentAccount)}
+                </p>
                 <p className="text-white font-semibold text-lg mt-1">
                   Ethereum
                 </p>
